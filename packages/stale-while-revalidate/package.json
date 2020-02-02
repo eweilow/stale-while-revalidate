@@ -1,0 +1,28 @@
+{
+  "name": "@eweilow/stale-while-revalidate",
+  "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist",
+  "devDependencies": {
+    "typescript": "^3.7.5"
+  },
+  "scripts": {
+    "typescript": "tsc --incremental"
+  },
+  "description": "A very simple stale-while-revalidate module with built-in batching",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eweilow/stale-while-revalidate.git"
+  },
+  "author": "eweilow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eweilow/stale-while-revalidate/issues"
+  },
+  "homepage": "https://github.com/eweilow/stale-while-revalidate",
+  "keywords": [
+    "stale-while-revalidate"
+  ]
+}

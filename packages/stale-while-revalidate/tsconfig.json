@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "target": "ES2017",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    "sourceMap": true,
+    "declarationMap": true,
+    "outDir": "./dist",
+    "skipLibCheck": true
+  },
+  "exclude": ["node_modules"],
+  "include": ["./src/**/*.ts"]
+}
