@@ -1,6 +1,6 @@
 {
   "name": "@eweilow/stale-while-revalidate",
-  "version": "1.0.0",
+  "version": "0.0.1-alpha.0",
   "publishConfig": {
     "access": "public"
   },
