@@ -10,19 +10,24 @@ type Return<Value> = {
 };
 
 export function staleWhileRevalidate<Id, Value>(
-  fetcher: (id: Id) => Promise<{ value: Value; maxAgeSeconds?: number }>
+  fetcher: (id: Id) => Promise<{ value: Value; maxAgeSeconds?: number }>,
+  generateKey: (id: Id) => string = id => id.toString()
 ) {
-  const valueCache = new Map<Id, (fresh?: boolean) => Promise<Return<Value>>>();
+  const valueCache = new Map<
+    string,
+    (fresh?: boolean) => Promise<Return<Value>>
+  >();
 
   return (id: Id, fresh = false) => {
-    if (!valueCache.has(id)) {
+    const key = generateKey(id);
+    if (!valueCache.has(key)) {
       valueCache.set(
-        id,
+        key,
         singleStaleWhileRevalidate(() => fetcher(id))
       );
     }
 
-    return valueCache.get(id)(fresh);
+    return valueCache.get(key)(fresh);
   };
 }
 
